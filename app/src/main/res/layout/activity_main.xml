@@ -11,78 +11,236 @@
     tools:context="com.example.haziny.accountbook.MainActivity"
     android:weightSum="1"
     android:orientation="vertical">
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:text="1"
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_weight="1.00"
-                android:layout_height="30dp" />
-
-            <TextView
-                android:text="2"
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_weight="3"
-                android:layout_height="30dp" />
-
-            <TextView
-                android:text="3"
-                android:layout_width="wrap_content"
-                android:id="@+id/textView2"
-                android:layout_weight="1"
-                android:layout_height="30dp" />
-
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:id="@+id/textView11"
+                android:layout_height="40dp" />
         </LinearLayout>
-
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="0dp">
+            android:layout_alignParentBottom="true">
 
-            <TextView
-                android:text="4"
+            <Button
+                android:text="월간"
                 android:layout_width="wrap_content"
-                android:id="@+id/textView4"
-                android:layout_weight="1"
-                android:layout_height="25dp" />
+                android:layout_height="30dp"
+                android:id="@+id/button" />
 
-            <TextView
-                android:text="5"
-                android:id="@+id/textView6"
+            <Button
+                android:text="월간"
                 android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:layout_height="25dp" />
+                android:layout_height="30dp"
+                android:id="@+id/button2"
+                android:layout_weight="1" />
 
+            <Button
+                android:text="일간"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:id="@+id/button3"
+                android:layout_weight="1"/>
+
+            <Button
+                android:text="설정"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:id="@+id/button4"
+                android:layout_weight="1"
+                android:layout_margin="0dp"/>
         </LinearLayout>
+    </LinearLayout>
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text="통계"
+                android:layout_height="30dp"
+                android:id="@+id/button5"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentLeft="true"
+                android:layout_width="50dp" />
+
+            <Button
+                android:text="2017-01-01"
+                android:layout_height="30dp"
+                android:id="@+id/button6"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentRight="false"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentBottom="false"
+                android:layout_centerInParent="true"
+                android:layout_width="120dp"
+                android:padding="0dp" />
+
+            <Button
+                android:text="추가"
+                android:layout_height="30dp"
+                android:id="@+id/button7"
+                android:layout_alignParentRight="true"
+                android:layout_width="50dp" />
+
+        </RelativeLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:text="4"
-                android:layout_width="wrap_content"
-                android:id="@+id/textView7"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_height="25dp" />
+                android:elevation="3dp">
 
-            <TextView
-                android:text="5"
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:layout_height="25dp" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_alignParentLeft="false">
+
+                    <TextView
+                        android:text="수입"
+                        android:id="@+id/textView6"
+                        android:layout_width="30dp"
+                        android:layout_weight="1"
+                        android:layout_height="25dp"
+                        android:textSize="12sp"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:text="잔액"
+                        android:layout_width="30dp"
+                        android:id="@+id/textView4"
+                        android:layout_weight="1"
+                        android:layout_height="25dp"
+                        android:textSize="12sp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_alignParentRight="false"
+                    android:gravity="right">
+
+                    <TextView
+                        android:text="300,000,000"
+                        android:id="@+id/textView6"
+                        android:layout_weight="1"
+                        android:layout_height="25dp"
+                        android:layout_width="100dp"
+                        android:textSize="17sp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:fontFamily="serif"
+                        android:gravity="right|center_vertical" />
+
+                    <TextView
+                        android:text="300,000,000"
+                        android:id="@+id/textView4"
+                        android:layout_weight="1"
+                        android:layout_height="25dp"
+                        android:layout_width="100dp"
+                        android:textSize="17sp"
+                        android:textColor="?attr/colorPrimaryDark"
+                        android:fontFamily="serif"
+                        android:gravity="right|center_vertical" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                    android:gravity="left">
+
+                        <TextView
+                            android:text="지출 합계"
+                            android:id="@+id/textView6"
+                            android:layout_weight="1"
+                            android:layout_height="25dp"
+                            android:paddingLeft="5dp"
+                            android:layout_width="70dp"
+                            android:textSize="12sp"
+                            android:gravity="center_vertical" />
+
+                        <TextView
+                            android:text="카드 지출"
+                            android:id="@+id/textView4"
+                            android:layout_weight="1"
+                            android:layout_height="25dp"
+                            android:paddingLeft="5dp"
+                            android:layout_width="70dp"
+                            android:textSize="12sp"
+                            android:gravity="center_vertical" />
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right">
+
+                    <TextView
+                        android:text="100,000,000"
+                        android:id="@+id/textView6"
+                        android:layout_weight="1"
+                        android:layout_height="25dp"
+                        android:layout_width="100dp"
+                        android:textSize="17sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:fontFamily="serif"
+                        android:gravity="right|center_vertical" />
+
+                    <TextView
+                        android:text="100,000,000"
+                        android:id="@+id/textView4"
+                        android:layout_weight="1"
+                        android:layout_height="25dp"
+                        android:layout_width="100dp"
+                        android:textSize="17sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:fontFamily="serif"
+                        android:gravity="right|center_vertical" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -121,56 +279,5 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:id="@+id/textView11"
-                android:elevation="0dp" />
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-
-        <Button
-            android:text="Button"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:id="@+id/button"
-            android:padding="0dp" />
-
-        <Button
-            android:text="Button"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:id="@+id/button2"
-            android:layout_weight="1"
-            android:padding="0dp" />
-
-        <Button
-            android:text="Button"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:id="@+id/button3"
-            android:layout_weight="1"
-            android:padding="0dp" />
-
-        <Button
-            android:text="Button"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:id="@+id/button4"
-            android:layout_weight="1"
-            android:layout_margin="0dp"
-            android:padding="0dp" />
     </LinearLayout>
 </RelativeLayout>
