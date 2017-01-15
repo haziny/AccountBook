@@ -104,9 +104,10 @@
             <Button
                 android:text="추가"
                 android:layout_height="30dp"
-                android:id="@+id/button7"
+                android:id="@+id/btnIncomeExpence"
                 android:layout_alignParentRight="true"
-                android:layout_width="50dp" />
+                android:layout_width="50dp"
+                android:onClick="onClickIncomeExpense"/>
 
         </RelativeLayout>
         <LinearLayout
@@ -279,8 +280,10 @@
             android:layout_height="118dp">
 
             <ListView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView" />
+
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
