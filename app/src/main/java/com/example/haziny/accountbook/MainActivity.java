@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity
 
     public void onClickIncomeExpense(View v)
     {
-        Intent intent = new Intent(this, InputIncomExpense.class);
+        Intent intent = new Intent(this, IncomeExpenseInputActivity.class);
         startActivity(intent);
     }
 
