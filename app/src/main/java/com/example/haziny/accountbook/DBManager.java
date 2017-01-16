@@ -14,6 +14,7 @@ public class DBManager extends SQLiteOpenHelper {
 
     public DBManager(Context context, String name, CursorFactory factory, int version) {
         super(context, name, factory, version);
+        //createTable();
     }
 
     @Override

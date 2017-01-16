@@ -27,7 +27,6 @@ import static com.example.haziny.accountbook.MainActivity.KEY_PRICE;
 public class MainActivity extends AppCompatActivity
 {
     DBManager mDBManager;
-//    SQLiteDatabase db;
     Cursor cursor;
     MyCursorAdapter myAdapter;
 
@@ -37,9 +36,7 @@ public class MainActivity extends AppCompatActivity
     final static String KEY_PRICE = "price";
 
     ListView lvIncomeExpenseList;
-    List IncomeExpenseList = new ArrayList();
     SQLiteDatabase AccountBookDB = null;
-//    ListAdapter adapter;
 
    @Override
    public void onCreate(Bundle savedInstanceState)
@@ -52,66 +49,9 @@ public class MainActivity extends AppCompatActivity
         mDBManager = new DBManager(getApplicationContext(), "AccountBook.db", null, 1);
         AccountBookDB = mDBManager.getWritableDatabase();
 
-        //mDBManager.createTable();
-
-        try
-        {
-                //AccountBookDB = this.openOrCreateDatabase(dbName, MODE_PRIVATE, null);
-               //AccountBookDB.close();
-        }
-        catch (SQLiteException se)
-        {
-                Toast.makeText(getApplicationContext(),  se.getMessage(), Toast.LENGTH_LONG).show();
-                Log.e("", se.getMessage());
-        }
-
-        ShowList();
-    }
-
-    protected void ShowList()
-    {
-       try
-       {
-           SQLiteDatabase ReadDB = this.openOrCreateDatabase(dbName, MODE_PRIVATE, null);
-
-           //SELECT문을 사용하여 테이블에 있는 데이터를 가져옵니다..
-//           Cursor cursor = ReadDB.rawQuery("SELECT * FROM " + tableName, null);
-            Cursor cursor = AccountBookDB.rawQuery("select * from IncomeExpense", null);
-           IncomeExpense IETest= null;
-
-           if (cursor != null)
-           {
-                if (cursor.moveToFirst())
-                {
-                    do
-                    {
-                        IETest = new IncomeExpense();
-                        IETest.set_id(cursor.getInt(0));
-                        IETest.setName(cursor.getString(1));
-                        IETest.setAge(cursor.getInt(2));
-                        IETest.setPhone(cursor.getInt(3));
-                        IETest.setPhone(cursor.getInt(4));
-
-                        //ArrayList에 추가합니다..
-                        IncomeExpenseList.add(IETest);
-                    } while (cursor.moveToNext());
-                }
-            }
-
-           //화면에 보여주기 위해 Listview에 연결a합니다.
-           lvIncomeExpenseList.setAdapter(myAdapter);
-
-           SimpleCursorAdapter Adapter = null;
-           Adapter = new SimpleCursorAdapter(this, android.R.Iayout.simple_list_item_2, );
-
-
-            ReadDB.close();
-        }
-       catch (SQLiteException se)
-       {
-            Toast.makeText(getApplicationContext(),  se.getMessage(), Toast.LENGTH_LONG).show();
-            Log.e("",  se.getMessage());
-        }
+        Cursor cursor = AccountBookDB.rawQuery("select * from IncomeExpense", null);
+        myAdapter = new MyCursorAdapter(this, cursor);
+       lvIncomeExpenseList.setAdapter(myAdapter);
     }
 
     public void onClickIncomeExpense(View v)
